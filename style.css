@@ -1,0 +1,156 @@
+/* style.css — earthy premium */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root{
+  --forest:#1C352D;
+  --gold:#C8A951;
+  --cream:#F7F2E7;
+  --charcoal:#2B2B2B;
+  --muted:#7f847f;
+  --white:#ffffff;
+  --shadow: 0 12px 28px rgba(10,12,10,0.12);
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Lato',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:var(--cream);color:var(--charcoal);line-height:1.6;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:9999;background:var(--forest);border-bottom:3px solid rgba(200,169,81,0.95);box-shadow:0 8px 30px rgba(8,10,8,0.12)}
+.header-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.logo img{height:68px;display:block}
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{color:#fff;font-weight:700;text-decoration:none;padding:8px 10px;border-radius:8px;position:relative;transition:all .18s}
+.nav a::after{content:'';position:absolute;left:10%;right:10%;bottom:-8px;height:2px;background:transparent;transition:all .18s}
+.nav a:hover{color:var(--gold)}
+.nav a:hover::after{background:linear-gradient(90deg,var(--gold),#e6d890)}
+.nav .contact-cta{border:2px solid rgba(255,255,255,0.08);padding:8px 18px;border-radius:28px}
+
+/* Hero */
+.hero{padding:72px 0 28px;text-align:center}
+.hero h1{font-family:'Poppins',sans-serif;font-size:40px;color:var(--forest);margin-bottom:8px}
+.hero p{color:var(--muted);font-size:15px;margin-bottom:14px}
+.cta{display:inline-block;background:linear-gradient(90deg,var(--gold),#e6d890);color:#fff;padding:12px 28px;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+
+/* Sections */
+.section{padding:44px 0}
+.section-title{font-family:'Poppins',sans-serif;font-size:22px;color:var(--forest);display:inline-block;border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:18px}
+
+/* Product cards + logos */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;align-items:start}
+.product-card{background:#fff;padding:16px;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;transition:transform .28s,opacity .35s;opacity:0;transform:translateY(16px)}
+.product-card.in-view{opacity:1;transform:translateY(0)}
+.product-card:hover{transform:translateY(-8px)}
+.oil-logo{width:96px;height:96px;border-radius:14px;margin:0 auto 12px;background:linear-gradient(180deg,#ffffff,#fbf8f2);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);overflow:hidden}
+.oil-logo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.product-card h3{font-size:16px;color:var(--forest);margin-bottom:6px}
+.product-card p{color:var(--muted);font-size:13px;margin-bottom:4px}
+
+/* Bottles (full visibility) */
+.product-bottles{display:flex;gap:18px;justify-content:center;margin-top:18px;flex-wrap:wrap;padding:10px}
+.bottle{width:320px;height:220px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:#fff;display:flex;align-items:center;justify-content:center;padding:14px}
+.bottle img{max-width:100%;max-height:100%;object-fit:contain;display:block;border-radius:8px}
+
+/* Why choose */
+.benefits-wrap{padding:18px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(28,53,45,0.03), rgba(200,169,81,0.02));box-shadow:var(--shadow)}
+.benefits-intro{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.benefits-tagline{color:var(--muted);font-weight:700}
+.benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.benefit-card{display:flex;gap:12px;align-items:flex-start;background:#fff;padding:14px;border-radius:10px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:opacity .35s,transform .35s}
+.benefit-card.in-view{opacity:1;transform:translateY(0)}
+.icon-wrap{width:64px;height:64px;border-radius:10px;background:linear-gradient(180deg,#fff,#f6f4ef);display:flex;align-items:center;justify-content:center}
+.icon-wrap svg{width:36px;height:36px}
+.benefit-card h4{margin-bottom:6px;color:var(--forest);font-size:15px}
+.benefit-card p{color:var(--muted);font-size:14px}
+.organic-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:linear-gradient(90deg,var(--gold),#e6d890);color:#fff;font-weight:700;box-shadow:0 8px 20px rgba(200,169,81,0.08)}
+
+/* Extraction & gallery */
+.extraction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:stretch;margin-top:16px}
+.media-thumb{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;position:relative;opacity:0;transform:translateY(16px);transition:opacity .35s,transform .35s}
+.media-thumb.in-view{opacity:1;transform:translateY(0)}
+.frame{width:100%;height:260px;display:flex;align-items:center;justify-content:center;background:#fbfaf6;padding:12px}
+.frame img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.play-overlay .circle{width:64px;height:64px;border-radius:50%;background:rgba(28,53,45,0.72);display:flex;align-items:center;justify-content:center}
+.play-overlay .circle svg{fill:#fff;width:26px;height:26px}
+.extract-text{margin-top:12px;color:var(--muted);font-size:15px;max-width:980px;margin-left:auto;margin-right:auto;text-align:center}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 460px;gap:26px;align-items:center}
+.about-box{background:#fff;padding:20px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:opacity .35s,transform .35s}
+.about-box.in-view{opacity:1;transform:translateY(0)}
+.about-video iframe{width:100%;height:360px;border-radius:10px;border:0}
+
+/* Contact */
+.contact-wrap{display:grid;grid-template-columns:1fr 460px;gap:30px;align-items:start}
+.contact-card{background:#fff;padding:18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:opacity .35s,transform .35s}
+.contact-card.in-view{opacity:1;transform:translateY(0)}
+.contact-form input,.contact-form textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #e8e4dc;margin-bottom:12px;font-size:14px}
+.contact-form button{background:linear-gradient(90deg,var(--gold),var(--forest));color:#fff;border:none;padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
+.muted-note{margin-top:10px;color:#7f847f;font-size:14px}
+.status-msg{margin-top:8px;font-weight:700}
+
+/* Footer */
+footer{background:linear-gradient(90deg,var(--forest), #10221b);color:#fff;padding:40px 0;margin-top:30px}
+.footer-grid{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between}
+.footer-col{flex:1;min-width:220px}
+.footer-col h4{color:var(--gold);margin-bottom:12px}
+.footer-col a{color:#fff;text-decoration:none}
+.social-links a{display:inline-flex;align-items:center;gap:8px;margin-right:12px;color:#fff;font-weight:700;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.03);transition:background .18s}
+.social-links a:hover{background:rgba(255,255,255,0.06)}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.78);display:flex;align-items:center;justify-content:center;z-index:1200;padding:18px}
+.modal-inner{width:min(1100px,100%);background:#000;border-radius:12px;padding:10px;position:relative;display:flex;flex-direction:column;gap:8px}
+.modal-inner iframe{width:100%;height:640px;border:0;border-radius:8px}
+.modal-inner img{width:100%;height:auto;border-radius:8px}
+.modal-close{position:absolute;top:-18px;right:-18px;background:#fff;color:var(--forest);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+.modal-controls{display:flex;justify-content:space-between;gap:12px;margin-top:6px}
+.modal-controls button{background:rgba(255,255,255,0.06);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;min-width:80px}
+
+/* Icons tiny motion */
+svg.icon-animate{transition:transform .28s, filter .28s}
+svg.icon-animate:hover{transform:translateY(-4px);filter:drop-shadow(0 8px 20px rgba(200,169,81,0.14))}
+
+/* Responsive */
+@media (max-width:980px){
+  .about-grid{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .product-bottles .bottle{width:240px;height:160px}
+  .modal-inner iframe{height:420px}
+  .hero h1{font-size:30px}
+}
+/* === MOBILE FIX for "Why Choose Vedhy Shree Ghani" section === */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr; /* Stack boxes vertically on mobile */
+    gap: 18px; /* More breathing room */
+  }
+
+  .benefit-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 18px;
+  }
+
+  .benefit-card .icon-wrap {
+    margin-bottom: 8px;
+  }
+
+  .benefit-card h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+`
