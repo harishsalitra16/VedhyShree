@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://vedhy-shree.vercel.app/sitemap.xml
+
+Sitemap: https://vedhyshree.vercel.app/sitemap.xml
